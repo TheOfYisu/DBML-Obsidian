@@ -2,6 +2,12 @@
 
 ## Project: DBML Obsidian
 
+**Author**: Jesús Daniel Garizao Mejía ([@TheOfYisu](https://github.com/TheOfYisu))  
+**License**: [Apache 2.0](LICENSE)  
+**Built with**: [OpenCode](https://github.com/anomalyco/opencode) + DeepSeek V4 Pro  
+**Plugin ID**: `dbml-obsidian`  
+**Min App Version**: Obsidian 1.4.0+
+
 An Obsidian plugin for designing database ER diagrams using DBML syntax with live preview, inspired by dbdiagram.io.
 
 ### Architecture
@@ -37,15 +43,19 @@ Output: `dist/main.js` (~15MB bundle), `dist/manifest.json`, `dist/styles.css`
 
 ### Vault path for dev
 
-Configured in `esbuild.config.mjs`: `C:\Users\jesud\OneDrive\Documentos\Obsidian Vault\.obsidian\plugins\dbml-diagrammer\`
+Configured in `esbuild.config.mjs`:
+```
+C:\Users\jesud\OneDrive\Documentos\Obsidian Vault\.obsidian\plugins\dbml-obsidian\
+```
 
 ### Current Issues / Limitations
 
 - `@dbml/core` v8.3.1 bundled → 15MB size
 - `Records` syntax stripped (not supported by @dbml/core)
 - Edge routing may use outer bounds fallback (very long lines) when many tables overlap the vertical corridor
-- No automatic history tracking for diagram operations (Delete, Add Rel) — manual reversion only
+- No undo/redo for diagram operations (disabled temporarily)
 - Export background uses computed CSS var; may not match in all themes
+- `data.json` stores savedLayouts keyed by file path; can grow large with many diagrams
 
 ### Testing
 
