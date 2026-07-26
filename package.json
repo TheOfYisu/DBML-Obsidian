@@ -9,7 +9,7 @@
 	},
 	"keywords": ["obsidian", "dbml", "erd", "database", "diagram"],
 	"author": "DBML Obsidian",
-	"license": "MIT",
+	"license": "Apache-2.0",
 	"devDependencies": {
 		"@codemirror/autocomplete": "6.18.0",
 		"@codemirror/language": "6.10.0",
