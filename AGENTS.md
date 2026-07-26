@@ -45,7 +45,7 @@ Output: `dist/main.js` (~15MB bundle), `dist/manifest.json`, `dist/styles.css`
 
 Configured in `esbuild.config.mjs`:
 ```
-C:\Users\jesud\OneDrive\Documentos\Obsidian Vault\.obsidian\plugins\dbml-obsidian\
+C:\Document\Obsidian Vault\.obsidian\plugins\dbml-obsidian\
 ```
 
 ### Current Issues / Limitations
