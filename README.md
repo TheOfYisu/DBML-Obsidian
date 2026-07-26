@@ -161,27 +161,41 @@ src/
     └── exporter.ts      # SVG/PNG export with theme inlining
 ```
 
-## Author
+## 👤 Autor
 
-**Jesús Daniel Garizao Mejía**
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/TheOfYisu.png" width="80" height="80" style="border-radius:50%"><br>
+      <b>Jesús Daniel Garizao Mejía</b>
+    </td>
+    <td>
+      <a href="https://github.com/TheOfYisu"><img src="https://img.shields.io/badge/GitHub-TheOfYisu-181717?logo=github&logoColor=white&style=for-the-badge"></a><br><br>
+      <a href="https://www.instagram.com/theofyisu"><img src="https://img.shields.io/badge/Instagram-@theofyisu-E4405F?logo=instagram&logoColor=white&style=for-the-badge"></a>
+    </td>
+  </tr>
+</table>
 
-[![GitHub](https://img.shields.io/badge/TheOfYisu-181717?logo=github&logoColor=white)](https://github.com/TheOfYisu)
-[![Instagram](https://img.shields.io/badge/@theofyisu-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/theofyisu)
+## 🤖 Créditos
 
-## Credits
+<div align="center">
+  <b>Desarrollado con</b><br><br>
+  <a href="https://github.com/anomalyco/opencode">
+    <img src="https://img.shields.io/badge/OpenCode-AI%20Assistant-6366F1?logo=robot&logoColor=white&style=for-the-badge">
+  </a>
+  &nbsp;
+  <a href="https://deepseek.com">
+    <img src="https://img.shields.io/badge/DeepSeek-V4%20Pro-536DFE?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40MSAwLTgtMy41OS04LThzMy41OS04IDgtOCA4IDMuNTkgOCA4LTMuNTkgOC04IDh6IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik04IDEyaDRsMi02djEybC0yLTZIOHoiIGZpbGw9IndoaXRlIi8+PC9zdmc+" alt="DeepSeek Logo" style="height:28px;vertical-align:middle">&nbsp;V4 Pro
+    <img src="https://img.shields.io/badge/DeepSeek-V4%20Pro-536DFE?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40MSAwLTgtMy41OS04LThzMy41OS04IDgtOCA4IDMuNTkgOCA4LTMuNTkgOC04IDh6IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik04IDEyaDRsMi02djEybC0yLTZIOHoiIGZpbGw9IndoaXRlIi8+PC9zdmc+&logoColor=white&style=for-the-badge">
+  </a>
+  <br><br>
+  <i>Construido 100% con asistencia de IA usando OpenCode y DeepSeek V4 Pro</i>
+</div>
 
-<p align="center">
-  <b>Developed with</b><br>
-  <a href="https://github.com/anomalyco/opencode"><img src="https://img.shields.io/badge/OpenCode-AI%20Assistant-6366F1?logo=robot&logoColor=white" alt="OpenCode"></a>
-  <a href="https://deepseek.com"><img src="https://img.shields.io/badge/DeepSeek-V4%20Pro-536DFE?logo=deepseek&logoColor=white" alt="DeepSeek V4 Pro"></a>
-</p>
-
-Built with AI assistance using [OpenCode](https://github.com/anomalyco/opencode) powered by **DeepSeek V4 Pro**.
-
-## License
+## 📄 Licencia
 
 ```
-Copyright 2024 DBML Obsidian
+Copyright 2026 DBML Obsidian
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
