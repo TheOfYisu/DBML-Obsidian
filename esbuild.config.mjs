@@ -4,17 +4,6 @@ import path from "path";
 
 const prod = process.argv[2] === "production";
 const distDir = "dist";
-const vaultPluginDir = "C:\\Users\\jesud\\OneDrive\\Documentos\\Obsidian Vault\\.obsidian\\plugins\\dbml-obsidian";
-
-function copyToVault() {
-	if (!fs.existsSync(vaultPluginDir)) {
-		fs.mkdirSync(vaultPluginDir, { recursive: true });
-	}
-	fs.copyFileSync(path.join(distDir, "main.js"), path.join(vaultPluginDir, "main.js"));
-	fs.copyFileSync(path.join(distDir, "manifest.json"), path.join(vaultPluginDir, "manifest.json"));
-	fs.copyFileSync(path.join(distDir, "styles.css"), path.join(vaultPluginDir, "styles.css"));
-	console.log("✓ Copied to vault");
-}
 
 if (!fs.existsSync(distDir)) {
 	fs.mkdirSync(distDir, { recursive: true });
@@ -54,9 +43,6 @@ if (prod) {
 				js: `module.exports = module.exports.default;`,
 			},
 		})
-		.then(() => {
-			copyToVault();
-		})
 		.catch(() => process.exit(1));
 } else {
 	const ctx = await esbuild.context({
@@ -88,8 +74,6 @@ if (prod) {
 		},
 	});
 
-	await ctx.rebuild();
-	copyToVault();
 	await ctx.watch();
 	console.log("Watching for changes... (Ctrl+C to stop)");
 }
