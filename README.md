@@ -17,6 +17,14 @@
 
 Design ER diagrams using [DBML](https://www.dbml.org/) syntax with live interactive preview — a native [dbdiagram.io](https://dbdiagram.io) alternative for Obsidian.
 
+<div align="center">
+  <img src="assets/screenshot_1.png" alt="DBML Obsidian Preview" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+</div>
+<br>
+<div align="center">
+  <img src="assets/screenshot_2.png" alt="DBML Obsidian Preview" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+</div>
+
 ## Features
 
 - **Code block support**: Use ` ```dbml ` blocks in Markdown notes — renders interactive diagrams inline
