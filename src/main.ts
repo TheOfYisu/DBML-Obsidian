@@ -10,6 +10,8 @@ export default class DBMLDiagrammerPlugin extends Plugin {
 	async onload(): Promise<void> {
 		await this.loadSettings();
 
+		console.log("DBML Obsidian v1.0.0 loaded");
+
 		const data = await this.loadData();
 		this.savedLayouts = data?.savedLayouts || {};
 

@@ -11,7 +11,6 @@ export const dbmlLinter = linter(
 			return [];
 		} catch (err) {
 			const error = extractParseError(err);
-			console.error("DBML Lint:", error.message, error.line ? `(line ${error.line})` : "");
 			const line = error.line ?? 1;
 			const col = error.col ?? 1;
 			const lineObj = view.state.doc.line(Math.min(line, view.state.doc.lines));

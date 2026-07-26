@@ -159,33 +159,22 @@ export class DbmlFileView extends TextFileView {
         container.addClass("dbml-app");
 
         this.buildTopBar(container);
-        console.log("[DBML] onOpen: building split...");
         this.buildSplit(container);
-        console.log("[DBML] onOpen: building bottom bar...");
         this.buildBottomBar(container);
-
-        console.log("[DBML] onOpen: file =", this.file?.path, "editorView =", !!this.editorView, "renderer =", !!this.renderer);
 
         if (this.file) {
             const content = await this.app.vault.read(this.file);
-            console.log("[DBML] onOpen: read file, length =", content.length, "first 80 chars:", content.substring(0, 80));
             if (content && this.editorView) {
                 this.suppressOnChange = true;
                 this.editorView.dispatch({
                     changes: { from: 0, to: this.editorView.state.doc.length, insert: content },
                 });
                 this.suppressOnChange = false;
-                console.log("[DBML] onOpen: dispatched to editor, doc length =", this.editorView.state.doc.length);
             }
             this.currentCode = content;
             if (content.trim()) {
-                console.log("[DBML] onOpen: calling renderDiagram...");
                 this.renderDiagram(content);
-            } else {
-                console.log("[DBML] onOpen: content is empty, skipping render");
             }
-        } else {
-            console.log("[DBML] onOpen: this.file is NULL!");
         }
 
         this.autoSaveInterval = window.setInterval(() => {
@@ -205,7 +194,7 @@ export class DbmlFileView extends TextFileView {
         const projIcon = left.createDiv("dbml-project-icon");
         projIcon.setAttribute("title", this.file?.basename ?? "untitled");
         projIcon.style.cursor = "default";
-        projIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 5C3 3.34 5.69 2 9 2s6 1.34 6 3v12c0 1.66-2.69 3-6 3S3 18.66 3 17V5Z" fill="currentColor" fill-opacity="0.10"/><ellipse cx="9" cy="5" rx="6" ry="2.5" stroke="currentColor" stroke-width="1.0"/><path d="M3 5v12c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V5" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><path d="M3 11c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="15.2" y1="16.3" x2="18.8" y2="13.7" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><line x1="15.2" y1="17.7" x2="18.8" y2="20.3" stroke="currentColor" stroke-width="1.0" stroke-linecap="round"/><circle cx="14.5" cy="17" r="2" fill="var(--interactive-accent)" stroke="currentColor" stroke-width="1.0"/><circle cx="19.5" cy="13" r="2" fill="var(--interactive-accent)" stroke="currentColor" stroke-width="1.0"/><circle cx="19.5" cy="21" r="2" fill="var(--interactive-accent)" stroke="currentColor" stroke-width="1.0"/></svg>';
+        projIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"><ellipse cx="9" cy="5" rx="6" ry="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M3 5v12c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M3 11c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="15" y1="16.5" x2="18.5" y2="14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="15" y1="17.5" x2="18.5" y2="20" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><circle cx="14.5" cy="17" r="2" fill="var(--interactive-accent)" stroke="currentColor" stroke-width="1"/><circle cx="19.5" cy="13" r="2" fill="var(--interactive-accent)" stroke="currentColor" stroke-width="1"/><circle cx="19.5" cy="21" r="2" fill="var(--interactive-accent)" stroke="currentColor" stroke-width="1"/><text x="14.5" y="17.5" text-anchor="middle" fill="#fff" font-size="5" font-weight="700">F</text><text x="19.5" y="13.5" text-anchor="middle" fill="#fff" font-size="5" font-weight="700">P</text><text x="19.5" y="21.5" text-anchor="middle" fill="#fff" font-size="5" font-weight="700">P</text></svg>';
         left.createEl("span", { text: "DBML Obsidian", cls: "dbml-brand-title" });
 
         // --- Center ---
@@ -447,27 +436,20 @@ export class DbmlFileView extends TextFileView {
     getViewData(): string { return this.currentCode; }
 
     setViewData(data: string, clear: boolean): void {
-        console.log("[DBML] setViewData", clear ? "CLEAR" : "SET", "len =", data.length);
-        if (data === this.currentCode) {
-            console.log("[DBML] setViewData: data unchanged, skip");
-            return;
-        }
+        if (data === this.currentCode) return;
         this.currentCode = data;
-        console.log("[DBML] setViewData: updating, editorView =", !!this.editorView, "file =", !!this.file);
         if (this.editorView && this.editorView.state.doc.toString() !== data) {
             this.suppressOnChange = true;
             this.editorView.dispatch({
                 changes: { from: 0, to: this.editorView.state.doc.length, insert: data },
             });
             this.suppressOnChange = false;
-            console.log("[DBML] setViewData: dispatched, doc now =", this.editorView.state.doc.length);
         }
         // Restore saved layout on initial load
         if (clear && this.file && this.renderer) {
             const saved = this.loadLayout();
             if (saved.size > 0) {
                 this.renderer.setInitialPositions(saved);
-                console.log("[DBML] setViewData: restored layout,", saved.size, "tables");
             }
         }
         this.scheduleRender(data);
@@ -493,8 +475,7 @@ export class DbmlFileView extends TextFileView {
     }
 
     private renderDiagram(code: string): void {
-        if (!this.renderer) { console.log("[DBML] renderDiagram: renderer is NULL, skip"); return; }
-        console.log("[DBML] renderDiagram: len =", code.length, "tables =", (code.match(/^Table\s+/gm) || []).length);
+        if (!this.renderer) return;
         if (!code.trim()) { this.renderer.setData({ tables: [], relations: [], tableGroups: [] }); this.showError(null); return; }
         try {
             const model = parseDbml(code);
