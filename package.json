@@ -1,0 +1,29 @@
+{
+	"name": "dbml-obsidian",
+	"version": "1.0.0",
+	"description": "Database diagram designer for Obsidian using DBML syntax, like dbdiagram.io",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "node esbuild.config.mjs production"
+	},
+	"keywords": ["obsidian", "dbml", "erd", "database", "diagram"],
+	"author": "DBML Obsidian",
+	"license": "MIT",
+	"devDependencies": {
+		"@codemirror/autocomplete": "6.18.0",
+		"@codemirror/language": "6.10.0",
+		"@codemirror/lint": "6.8.0",
+		"@codemirror/state": "6.5.0",
+		"@codemirror/view": "6.33.0",
+		"@lezer/highlight": "1.2.0",
+		"@types/node": "^20.11.0",
+		"codemirror": "6.0.1",
+		"esbuild": "^0.23.0",
+		"obsidian": "latest",
+		"typescript": "^5.5.0"
+	},
+	"dependencies": {
+		"@dbml/core": "^8.3.1"
+	}
+}
