@@ -1,0 +1,841 @@
+/* ================================================
+   DBML Diagrammer — dbdiagram.io aesthetic
+   ================================================ */
+
+/* --- App shell --- */
+.dbml-app {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: var(--font-text, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif);
+	overflow: hidden;
+}
+
+/* --- TOP BAR --- */
+.dbml-topbar {
+	display: flex;
+	align-items: center;
+	height: 44px;
+	padding: 0 12px;
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	flex-shrink: 0;
+	gap: 16px;
+}
+
+.dbml-topbar-left {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 0;
+}
+
+.dbml-project-select {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	color: #94a3b8;
+	font-size: 13px;
+	white-space: nowrap;
+}
+
+.dbml-project-select:hover {
+	color: #e2e8f0;
+}
+
+.dbml-project-icon {
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.dbml-brand-title {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+.dbml-file-info {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	color: #64748b;
+}
+
+.dbml-file-path {
+	max-width: 160px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dbml-status-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.dbml-status-dot.green { background: #22c55e; }
+.dbml-status-dot.blue  { background: #3b82f6; }
+
+.dbml-topbar-center {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex: 1;
+	justify-content: center;
+}
+
+.dbml-tb-btn {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 5px 10px;
+	background: transparent;
+	border: none;
+	border-radius: 6px;
+	color: #94a3b8;
+	font-size: 12px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.dbml-tb-btn:hover {
+	background: var(--background-modifier-border);
+	color: #e2e8f0;
+}
+
+.dbml-tb-btn svg {
+	width: 15px;
+	height: 15px;
+}
+
+.dbml-tb-btn-accent {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 5px 14px;
+	background: #3b82f6;
+	border: none;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.dbml-tb-btn-accent:hover {
+	background: #2563eb;
+}
+
+.dbml-tb-btn-accent svg {
+	width: 14px;
+	height: 14px;
+}
+
+.dbml-topbar-right {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: auto;
+}
+
+.dbml-user-avatar {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: #475569;
+	color: #e2e8f0;
+	font-size: 12px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.dbml-user-avatar:hover {
+	background: #64748b;
+}
+
+/* --- SPLIT --- */
+.dbml-split {
+	display: flex;
+	flex: 1;
+	min-height: 0;
+}
+
+.dbml-editor-pane {
+	width: 30%;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	background: var(--background-primary);
+	border-right: 1px solid var(--background-secondary);
+	overflow: hidden;
+}
+
+.dbml-editor-container {
+	flex: 1;
+	min-height: 0;
+	overflow: auto;
+}
+
+/* CodeMirror overrides */
+.dbml-editor-container .cm-editor {
+	height: 100%;
+	background: var(--background-primary);
+}
+
+.dbml-editor-container .cm-editor .cm-content {
+	font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+	font-size: 13px;
+	padding: 12px 0;
+	caret-color: #e2e8f0;
+}
+
+.dbml-editor-container .cm-editor .cm-line {
+	padding: 0 12px;
+}
+
+.dbml-editor-container .cm-editor .cm-gutters {
+	background: var(--background-primary);
+	border-right: 1px solid var(--background-secondary);
+	color: #475569;
+	font-size: 11px;
+	padding: 0 8px 0 4px;
+}
+
+.dbml-editor-container .cm-editor .cm-activeLineGutter {
+	background: rgba(59,130,246,0.08);
+	color: #64748b;
+}
+
+.dbml-editor-container .cm-editor .cm-activeLine {
+	background: rgba(59,130,246,0.06);
+}
+
+.dbml-editor-container .cm-editor .cm-selectionBackground,
+.dbml-editor-container .cm-editor.cm-focused .cm-selectionBackground {
+	background: rgba(59,130,246,0.25) !important;
+}
+
+.dbml-editor-container .cm-editor .cm-cursor {
+	border-left: 2px solid #e2e8f0;
+}
+
+.dbml-editor-container .cm-editor .cm-foldPlaceholder {
+	background: var(--background-secondary);
+	border-color: var(--background-modifier-border);
+	color: #64748b;
+}
+
+.dbml-split-divider {
+	width: 3px;
+	background: var(--background-secondary);
+	cursor: col-resize;
+	flex-shrink: 0;
+	transition: background 0.15s;
+}
+
+.dbml-split-divider:hover,
+.dbml-split-divider.dragging {
+	background: #3b82f6;
+}
+
+.dbml-diagram-pane {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	background: var(--background-primary);
+	overflow: hidden;
+}
+
+.dbml-diagram-header {
+	display: flex;
+	align-items: center;
+	height: 36px;
+	padding: 0 16px;
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-secondary);
+	flex-shrink: 0;
+	gap: 8px;
+}
+
+.dbml-diagram-header-title {
+	font-size: 12px;
+	color: #64748b;
+	font-weight: 500;
+}
+
+.dbml-diagram-header-sep {
+	width: 1px;
+	height: 16px;
+	background: var(--background-modifier-border);
+}
+
+/* --- BOTTOM BAR --- */
+.dbml-bottombar {
+	display: flex;
+	align-items: center;
+	height: 36px;
+	padding: 0 12px;
+	background: var(--background-secondary);
+	border-top: 1px solid var(--background-modifier-border);
+	flex-shrink: 0;
+	gap: 12px;
+}
+
+.dbml-bottombar-left {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.dbml-zoom-btn {
+	width: 24px;
+	height: 24px;
+	border: none;
+	border-radius: 4px;
+	background: transparent;
+	color: #94a3b8;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dbml-zoom-btn:hover {
+	background: var(--background-modifier-border);
+	color: #e2e8f0;
+}
+
+.dbml-zoom-slider {
+	-webkit-appearance: none;
+	width: 80px;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--background-modifier-border);
+	outline: none;
+	cursor: pointer;
+}
+
+.dbml-zoom-slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #64748b;
+	cursor: pointer;
+}
+
+.dbml-zoom-slider::-webkit-slider-thumb:hover {
+	background: #3b82f6;
+}
+
+.dbml-zoom-label {
+	font-size: 11px;
+	color: #64748b;
+	min-width: 36px;
+	text-align: center;
+}
+
+.dbml-bottombar-spacer {
+	flex: 1;
+}
+
+.dbml-bottombar-right {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.dbml-pro-badge {
+	font-size: 9px;
+	font-weight: 700;
+	padding: 2px 6px;
+	border-radius: 3px;
+	background: #3b82f6;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+/* --- CANVAS (diagram) --- */
+.erd-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: var(--background-primary);
+}
+
+.erd-svg {
+	width: 100%;
+	height: 100%;
+	display: block;
+	cursor: grab;
+}
+
+.erd-svg:active {
+	cursor: grabbing;
+}
+
+/* --- TABLE CARDS --- */
+.erd-table {
+	cursor: grab;
+}
+
+.erd-table-body {
+	fill: var(--background-secondary);
+	stroke: var(--background-modifier-border);
+	stroke-width: 1;
+}
+
+.erd-table-shadow {
+	fill: rgba(0, 0, 0, 0.1);
+}
+
+.erd-field-stripe {
+	fill: var(--background-modifier-hover);
+	pointer-events: none;
+}
+
+.erd-table-header {
+	fill: var(--interactive-accent);
+}
+
+.erd-table-title {
+	fill: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+}
+
+.erd-field-bg {
+	fill: transparent;
+}
+
+.erd-field-row:hover .erd-field-bg {
+	fill: var(--background-modifier-hover);
+}
+
+.erd-field-name {
+	fill: var(--text-normal);
+	font-size: 12px;
+	font-family: "JetBrains Mono", "Cascadia Code", monospace;
+}
+
+.erd-field-type {
+	fill: var(--text-muted);
+	font-size: 12px;
+	font-family: "JetBrains Mono", "Cascadia Code", monospace;
+}
+
+.erd-badge-pk {
+	fill: #b45309;
+}
+
+.erd-badge-fk {
+	fill: #1d4ed8;
+}
+
+.erd-badge-uq {
+	fill: #6d28d9;
+}
+
+.erd-badge-text {
+	fill: #fff;
+	font-size: 8px;
+	font-weight: 700;
+}
+
+/* --- EDGES --- */
+.erd-edge {
+	fill: none;
+	stroke: rgb(71, 85, 105);
+	stroke-width: 1.5;
+	transition: stroke 0.15s, stroke-width 0.15s;
+}
+}
+
+.erd-edge-hit {
+	fill: none;
+	stroke: transparent;
+	stroke-width: 14;
+	cursor: pointer;
+}
+
+.erd-edge:hover,
+.erd-edge.erd-hover,
+.erd-edge.erd-highlight {
+	stroke: #3b82f6;
+	stroke-width: 2.2;
+}
+
+.erd-edge.erd-selected {
+	stroke: #60a5fa;
+	stroke-width: 2.5;
+}
+
+.erd-edge-label {
+	fill: var(--text-muted);
+	font-size: 10px;
+	font-family: "JetBrains Mono", monospace;
+	pointer-events: none;
+}
+
+.erd-label-bg {
+	fill: var(--background-primary);
+	stroke: var(--background-modifier-border);
+	stroke-width: 0.5;
+}
+
+.erd-anchor {
+	fill: var(--interactive-accent);
+	stroke: var(--background-primary);
+	stroke-width: 2;
+}
+
+.erd-glyph-bar,
+.erd-glyph-line {
+	stroke: #475569;
+	stroke-width: 1.5;
+}
+
+.erd-table.erd-selected-table .erd-table-body {
+	stroke: #3b82f6;
+	stroke-width: 2;
+	filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.3));
+}
+
+.erd-select-rect {
+	pointer-events: none;
+}
+
+.erd-table.erd-dim,
+.erd-edge.erd-dim {
+	opacity: 0.3;
+}
+
+.erd-table.erd-highlight,
+.erd-edge.erd-highlight {
+	opacity: 1;
+}
+
+/* --- RELATION MODE --- */
+.erd-relation-mode .erd-svg {
+	cursor: crosshair;
+}
+
+.erd-relation-mode .erd-table {
+	cursor: crosshair;
+}
+
+.erd-field-row {
+	cursor: crosshair;
+}
+
+.erd-field-row[data-rel-source="true"] .erd-field-bg {
+	fill: rgba(59, 130, 246, 0.25) !important;
+}
+
+.erd-field-row[data-rel-source="true"] .erd-field-name,
+.erd-field-row[data-rel-source="true"] .erd-field-type {
+	fill: #60a5fa;
+}
+
+/* --- RELATION PICKER --- */
+.erd-rel-picker {
+	position: absolute;
+	z-index: 200;
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 6px;
+	display: flex;
+	gap: 4px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.erd-rel-picker-btn {
+	width: 32px;
+	height: 32px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	background: var(--background-primary);
+	color: #e2e8f0;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.erd-rel-picker-btn:hover {
+	background: #3b82f6;
+	color: #fff;
+	border-color: #3b82f6;
+}
+
+.erd-rel-picker-cancel {
+	color: #ef4444;
+}
+
+.erd-rel-picker-cancel:hover {
+	background: #ef4444;
+	color: #fff;
+	border-color: #ef4444;
+}
+
+/* --- ERRORS --- */
+.erd-error {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	right: 8px;
+	z-index: 100;
+	padding: 12px 16px;
+	background: #b91c1c;
+	color: #fff;
+	border-radius: 8px;
+	font-size: 13px;
+	font-family: "JetBrains Mono", monospace;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+	line-height: 1.5;
+}
+
+/* --- EMBED (code blocks in notes) --- */
+.erd-embed {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	overflow: hidden;
+	margin: 12px 0;
+	background: var(--background-primary);
+}
+
+.erd-embed .erd-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 5px 10px;
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	flex-shrink: 0;
+}
+
+.erd-embed .erd-diagram-container {
+	height: 420px;
+	flex: none;
+}
+
+/* --- INLINE TOOLBAR (embeds & fallback) --- */
+.erd-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 5px 10px;
+	background: var(--background-secondary);
+	border-bottom: 1px solid var(--background-modifier-border);
+	flex-shrink: 0;
+}
+
+.erd-toolbar-group {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.erd-toolbar-sep {
+	width: 1px;
+	height: 20px;
+	background: var(--background-modifier-border);
+	margin: 0 4px;
+}
+
+.erd-toolbar-spacer {
+	flex: 1;
+}
+
+.erd-toolbar-help {
+	font-size: 10px;
+	color: #475569;
+	white-space: nowrap;
+}
+
+.erd-btn {
+	background: transparent;
+	border: none;
+	border-radius: 4px;
+	padding: 4px 6px;
+	cursor: pointer;
+	color: #94a3b8;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 12px;
+}
+
+.erd-btn:hover {
+	background: var(--background-modifier-border);
+	color: #e2e8f0;
+}
+
+.erd-btn svg {
+	width: 16px;
+	height: 16px;
+}
+
+.erd-btn-label {
+	font-size: 11px;
+	font-weight: 500;
+}
+
+.erd-btn-accent {
+	color: #60a5fa;
+}
+
+.erd-btn-accent:hover {
+	color: #93bbfd;
+}
+
+.erd-sql-select {
+	font-size: 11px;
+	padding: 3px 6px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: #e2e8f0;
+	height: 28px;
+	cursor: pointer;
+}
+
+.erd-sql-select:focus {
+	border-color: #3b82f6;
+	outline: none;
+}
+
+/* --- PLACEHOLDER --- */
+.erd-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: #475569;
+	font-size: 14px;
+	font-style: italic;
+}
+
+/* --- TABLE GROUPS --- */
+.erd-group-label {
+	fill: #818cf8;
+	font-size: 11px;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+}
+
+/* --- EXPORT POPUP --- */
+.dbml-export-popup {
+	z-index: 250;
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+	min-width: 180px;
+}
+
+.dbml-export-popup .erd-btn {
+	width: 100%;
+	justify-content: flex-start;
+	padding: 6px 10px;
+	border-radius: 4px;
+}
+
+.dbml-export-popup .erd-toolbar-sep {
+	width: auto;
+	height: 1px;
+	margin: 2px 6px;
+}
+
+/* --- HELP MODAL --- */
+.dbml-help-modal {
+	max-height: 70vh;
+	overflow-y: auto;
+	padding: 8px;
+}
+
+.dbml-help-modal h2 {
+	margin: 0 0 16px;
+	font-size: 18px;
+	color: #e2e8f0;
+}
+
+.dbml-help-section {
+	margin-bottom: 20px;
+}
+
+.dbml-help-section h3 {
+	margin: 0 0 4px;
+	font-size: 14px;
+	color: #60a5fa;
+}
+
+.dbml-help-desc {
+	margin: 0 0 8px;
+	font-size: 12px;
+	color: #64748b;
+	line-height: 1.5;
+}
+
+.dbml-help-code {
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	padding: 10px 14px;
+	font-family: "JetBrains Mono", "Cascadia Code", monospace;
+	font-size: 12px;
+	color: #e2e8f0;
+	cursor: pointer;
+	margin: 0;
+	white-space: pre;
+	overflow-x: auto;
+}
+
+.dbml-help-code:hover {
+	border-color: #3b82f6;
+}
+
+.dbml-help-code code {
+	background: none;
+	padding: 0;
+	font-size: inherit;
+}
+
+.dbml-help-footer {
+	font-size: 11px;
+	color: #475569;
+	text-align: center;
+	margin-top: 16px;
+}
+
+
