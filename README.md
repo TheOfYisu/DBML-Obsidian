@@ -161,6 +161,13 @@ src/
     └── exporter.ts      # SVG/PNG export with theme inlining
 ```
 
+## Author
+
+**Jesús Daniel Garizao Mejía**
+
+[![GitHub](https://img.shields.io/badge/TheOfYisu-181717?logo=github&logoColor=white)](https://github.com/TheOfYisu)
+[![Instagram](https://img.shields.io/badge/@theofyisu-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/theofyisu)
+
 ## Credits
 
 <p align="center">
@@ -169,7 +176,7 @@ src/
   <a href="https://deepseek.com"><img src="https://img.shields.io/badge/DeepSeek-V4%20Pro-536DFE?logo=deepseek&logoColor=white" alt="DeepSeek V4 Pro"></a>
 </p>
 
-Built entirely with AI assistance using [OpenCode](https://github.com/anomalyco/opencode) powered by **DeepSeek V4 Pro**.
+Built with AI assistance using [OpenCode](https://github.com/anomalyco/opencode) powered by **DeepSeek V4 Pro**.
 
 ## License
 

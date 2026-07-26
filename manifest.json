@@ -4,6 +4,6 @@
 	"version": "1.0.0",
 	"minAppVersion": "1.4.0",
 	"description": "Design database diagrams using DBML code with live preview — a native dbdiagram.io alternative for Obsidian",
-	"author": "DBML Obsidian",
+	"author": "Jesus Daniel Garizao Mejia (TheOfYisu)",
 	"isDesktopOnly": false
 }
