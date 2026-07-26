@@ -4,7 +4,7 @@ import path from "path";
 
 const prod = process.argv[2] === "production";
 const distDir = "dist";
-const vaultPluginDir = "C:\\Users\\jesud\\OneDrive\\Documentos\\Obsidian Vault\\.obsidian\\plugins\\dbml-diagrammer";
+const vaultPluginDir = "C:\\Users\\jesud\\OneDrive\\Documentos\\Obsidian Vault\\.obsidian\\plugins\\dbml-obsidian";
 
 function copyToVault() {
 	if (!fs.existsSync(vaultPluginDir)) {
