@@ -64,7 +64,7 @@ Design ER diagrams using [DBML](https://www.dbml.org/) syntax with live interact
 
 ### From source
 ```bash
-git clone https://github.com/user/dbml-obsidian.git
+git clone https://github.com/TheOfYisu/DBML-Obsidian.git
 cd dbml-obsidian
 npm install --legacy-peer-deps
 npm run build
